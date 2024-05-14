@@ -1,5 +1,0 @@
-package com.mongodb.dao;
-
-public class BooksRepository {
-
-}
