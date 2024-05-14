@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>switchExample</title>
+</head>
+<body>
+	<h1>switchExample</h1>
+	
+	<div th:switch="${ #lists.size(list)}">
+		<h1 th:case="'0'">List contain zero element</h1>
+		<h1 th:case="'1'">List contain one element</h1>
+		<h1 th:case="*">List contain more than one element</h1>
+	</div>
+</body>
+</html>

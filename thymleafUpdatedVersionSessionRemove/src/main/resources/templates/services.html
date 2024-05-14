@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Service Page</title>
+</head>
+<body>
+
+	<ul>
+		<li><a th:href="@{/home/}"></a>Home</li>
+		<li><a th:href="@{/home/about}"></a>About</li>
+		<li><a th:href="@{/home/services}"></a>Services</li>
+	</ul>
+	<h1>This is service page</h1>
+	<div>
+		<h1 th:text="${session.message}"></h1>
+		<!-- Remove the message -->
+		<!--OLD VERSION  -->
+		<!-- <th:block th:text="${#session.removeAttribute('message')}"></th:block> -->
+		
+		<!--UPDATED VERSION 3.1 -->
+		<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+		
+	</div>
+</body>
+</html>

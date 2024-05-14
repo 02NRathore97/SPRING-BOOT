@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Include fragment Example</title>
+</head>
+<body>
+	<h1>Include Fragment Example</h1>
+	
+	<!-- <footer th:include="footer::footer1">This is footer from includefragement.html</footer> -->	
+	
+	
+	
+	<!--passing dynamic value to template while including   -->
+	<!-- <footer th:include="footer::footer1('this is titile','this is subtitle')">This is footer from includefragement.html</footer> -->
+	
+	
+	
+	<!--passing values coming from controllers to template while including  -->
+	 <footer th:include="footer::footer1(${title},${subtitle})">This is footer from include fragement.html</footer> 
+	
+</body>
+</html>

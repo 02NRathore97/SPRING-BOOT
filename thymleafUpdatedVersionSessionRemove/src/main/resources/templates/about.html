@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>About Page</title>
+</head>
+<body>
+
+	<ul>
+		<li><a th:href="@{/home}"></a>Home</li>
+		<li><a th:href="@{/home/about}"></a>About</li>
+		<li><a th:href="@{/home/services}"></a>Services</li>
+	</ul>
+	<h1>This is about page</h1>
+<div>
+		<h1 th:text="${session.message}"></h1>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Iterate Example</title>
+</head>
+<body>
+	<h1>Iterate Example</h1>
+	
+	<h1 th:text="${names}"></h1>
+	<ul>
+		<li th:each="n : ${names}">
+			 <h1 th:text="${n}"></h1> 
+			
+		</li>
+	</ul>
+	<ul>
+		<li th:each="n , status: ${names}">
+			
+			<h1 th:text="${status.index} +' '+${n}"></h1>
+		</li>
+	</ul>
+	<ul>
+		<li th:each="n , status: ${names}">
+			
+			<h1 th:text="${status.index+1} +' '+${n}"></h1>
+		</li>
+	</ul>
+	<ul>
+		<li th:each="n , status: ${names}">
+			
+			<span th:style="${status.odd}?'color:red;font-weight:bold':''"  th:text="${status.index+1} +' '+${n}"></span>
+		</li>
+	</ul>
+</body>
+</html>

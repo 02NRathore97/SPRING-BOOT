@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>elviscondition Example</title>
+</head>
+<body>
+	<h1>elviscondition Example</h1>
+	<h1>User is : <span th:text="${isActive}? 'Active':'NotActive'"></span></h1>
+	<h1>User is : <span th:text="${isActive}? 'Active':'NotActive'" th:style="${isActive}? 'color:green':'color:red'"></span></h1>
+</body>
+</html>

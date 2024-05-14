@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Form</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+<body style="background-color:gray;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3 pb-4"
+				style="border: 1px solid black; box-shadow: 5px 5px 5px black; margin-top: 100px; background-color: gray;">
+				<h1>Form</h1>
+				<form th:action="@{/process}" th:method="post"
+					th:object="${loginData}">
+
+
+					<!-- <div class="form-group">
+						<label>Username</label> <input type="text" name="username"
+							class="form-control" 
+							placeholder="Enter username"
+							th:value="${loginData.username}">
+						 <p style="color: red" th:each="e:${#fields.errors('username')}" th:text="${e}"></p> 
+						</div> -->
+
+
+					<div class="form-group">
+						<label>Username</label> <input type="text" name="username"
+							class="form-control"
+							th:classappend="${#fields.hasErrors('username')?'is-invalid':''}"
+							placeholder="Enter username" th:value="${loginData.username}">
+						<div class="invalid-feedback"
+							th:each="e:${#fields.errors('username')}" th:text="${e}"></div>
+					</div>
+
+
+
+
+					<!-- <div class="form-group">
+						<label>Email</label> <input type="email" name="email"
+							class="form-control" placeholder="Enter email"
+							th:value="${loginData.email}">
+						<p style="color: red" th:each="e:${#fields.errors('email')}"
+							th:text="${e}"></p>
+					</div> -->
+
+
+					<div class="form-group">
+						<label>Email</label> <input type="email" name="email"
+							placeholder="Enter email" class="form-control"
+							th:classappend="${#fields.hasErrors('email')?'is-invalid':''}"
+							th:value="${loginData.email}">
+						<div class="invalid-feedback"
+							th:each="e:${#fields.errors('email')}" th:text="${e}"></div>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
